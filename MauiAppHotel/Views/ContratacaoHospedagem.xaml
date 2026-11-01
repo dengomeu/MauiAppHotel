@@ -36,7 +36,8 @@
                              x:Name="stp_adultos"
                              Minimum="0"
                              Maximum="10"
-                             Increment="1" />
+                             Increment="1" 
+                             BackgroundColor="{StaticResource BackgroundLight}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                            Text="Crianças:" />
@@ -52,7 +53,8 @@
                              x:Name="stp_criancas"
                              Minimum="0"
                              Maximum="10"
-                             Increment="1" />
+                             Increment="1" 
+                             BackgroundColor="{StaticResource BackgroundLight}"/>
                 </Grid>
 
                 <Frame Padding="10" Margin="10">
@@ -64,7 +66,9 @@
                                TextColor="{StaticResource Primary}"/>
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação" />
+                                Title="Selecione sua Acomodação"
+                                ItemDisplayBinding="{Binding Descricao}" 
+                                BackgroundColor="{StaticResource BackgroundLight}"/>
                     </VerticalStackLayout>
                 </Frame>
 
@@ -80,7 +84,8 @@
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
                             <Label Text="Check-in:" />
                             <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy" />
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkin_DateSelected" />
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
@@ -91,7 +96,8 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar"  
+                <Button Text="Avançar"
+                        Clicked="Button_Clicked"
                         BackgroundColor="{StaticResource Secondary}"
                         TextColor="{StaticResource White}"/>
 
